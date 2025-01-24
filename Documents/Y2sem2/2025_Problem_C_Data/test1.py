@@ -8,7 +8,7 @@ data = pd.read_csv('summerOly_medal_counts.csv')
 data.columns = data.columns.str.strip()
 
 # Filter for China's data
-china_data = data[data['NOC'] == 'China']     #put in country name here.
+china_data = data[data['NOC'] == 'United States']     #put in country name here.
 
 # Check if China data exists
 if not china_data.empty:
@@ -27,7 +27,7 @@ if not china_data.empty:
     plt.scatter(china_years, china_bronze, color='brown', label='Bronze', s=50)
 
     # Add labels and legend
-    plt.title('China\'s Medal Counts Across Olympic Years', fontsize=14)
+    plt.title('United States\'s Medal Counts Across Olympic Years', fontsize=14)
     plt.xlabel('Year', fontsize=12)
     plt.ylabel('Medal Counts', fontsize=12)
     plt.xticks(china_years, rotation=45)
