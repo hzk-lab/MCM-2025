@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the dataset
-data = pd.read_csv('summerOly_medal_counts.csv')
+data = pd.read_csv('/Users/zekaihuang/Desktop/MCM/MCM2025/Documents/Y2sem2/2025_Problem_C_Data/summerOly_medal_counts.csv')
 
 # Clean column names (optional, in case there are extra spaces)
 data.columns = data.columns.str.strip()
