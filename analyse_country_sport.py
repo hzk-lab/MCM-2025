@@ -5,7 +5,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 
 # Load the datasets
-results_df = pd.read_csv('updated_gold_medals.csv', encoding='ISO-8859-1')
+results_df = pd.read_csv('updated_silver_medals.csv', encoding='ISO-8859-1')
 programs_df = pd.read_csv('summerOly_programs.csv', encoding='ISO-8859-1')
 
 athletics_results = results_df[results_df['Sport'] == 'Table Tennis'] #Change sport name here
