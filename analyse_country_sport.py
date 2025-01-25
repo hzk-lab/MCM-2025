@@ -5,10 +5,10 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 
 # Load the datasets
-results_df = pd.read_csv('updated_silver_medals.csv', encoding='ISO-8859-1')
+results_df = pd.read_csv('updated_gold_medals.csv', encoding='ISO-8859-1')
 programs_df = pd.read_csv('summerOly_programs.csv', encoding='ISO-8859-1')
 
-athletics_results = results_df[results_df['Sport'] == 'Table Tennis'] #Change sport name here
+athletics_results = results_df[results_df['Sport'] == 'Swimming'] #Change sport name here
 
 # Ensure the 'summerOly_programs.csv' DataFrame has the necessary column names
 # Rename columns in programs_df to match year format if necessary
@@ -22,7 +22,7 @@ for year in athletics_results['Year'].unique():
     year_data = athletics_results[athletics_results['Year'] == year]
     
     # Locate the total number of gold medals for athletics in this year from programs_df
-    sport_program_data = programs_df[programs_df['Discipline'] == 'Table Tennis']  # Adjust 'Discipline' if necessary
+    sport_program_data = programs_df[programs_df['Discipline'] == 'Swimming']  # Adjust 'Discipline' if necessary
 
     if not sport_program_data.empty and str(year) in sport_program_data.columns:
     # Convert the value to numeric to ensure it's treated as a number
@@ -35,7 +35,7 @@ for year in athletics_results['Year'].unique():
     
     
     # Get the number of gold medals won by country
-    country_gold_medals = year_data['CHN'].sum()  # 'CHN' column represents country    "Change country name here"
+    country_gold_medals = year_data['AUS'].sum()  # 'CHN' column represents country    "Change country name here"
     print(f"Year: {year}, Total Gold Medals: {total_gold_medals_in_year}, country's Gold Medals: {country_gold_medals}")
     
     
