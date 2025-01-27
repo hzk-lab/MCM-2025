@@ -5,7 +5,7 @@ def main():
     # 1. 读取 2028 年的预测结果 CSV
     #    假设文件名为 final_prediction_2028.csv，且包含:
     #      Year, Sport, Country, ActualGold, PredictedGold
-    df = pd.read_csv('/Users/leonhuangzekai/Desktop/MCM/final_prediction_2028_with_best_k_total.csv')
+    df = pd.read_csv('/Users/leonhuangzekai/Desktop/MCM/final_prediction_2028_with_best_k_silver.csv')
 
     # 2. 按 Country 分组，对 PredictedGold 求和
     df_sum = df.groupby("Country", as_index=False)["PredictedGold"].sum()
@@ -22,7 +22,7 @@ def main():
     df_sum.sort_values("PredictedGoldTotal", ascending=False, inplace=True)
 
     # 6. 将结果输出到新 CSV
-    df_sum.to_csv("final_prediction_2028_total.csv", index=False)
+    df_sum.to_csv("final_prediction_2028_silver.csv", index=False)
 
     # print("聚合完成: 已输出到 'country_gold_sums_2028_2.0.csv'。")
     print(df_sum.head(20))  # 可选：在控制台上看看前 20 行

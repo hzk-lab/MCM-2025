@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the dataset
-file_path = 'C:/Users/leonhuangzekai/Desktop/MCM/updated_total_medals.csv'  # Replace with the actual path to your file
+file_path = 'C:/Users/leonhuangzekai/Desktop/MCM/updated_bronze_medals.csv'  # Replace with the actual path to your file
 data = pd.read_csv(file_path)
 
 # Identify numeric columns
@@ -15,7 +15,7 @@ data[numeric_columns] = data[numeric_columns].replace([float('inf'), -float('inf
 data[numeric_columns] = data[numeric_columns].astype(int)
 
 # Save the modified DataFrame
-output_path = 'C:/Users/leonhuangzekai/Desktop/MCM/updated_total_medals_int.csv'  # Replace with the desired output path
+output_path = 'C:/Users/leonhuangzekai/Desktop/MCM/updated_bronze_medals_int.csv'  # Replace with the desired output path
 data.to_csv(output_path, index=False)
 
 print(f"Modified file saved at: {output_path}")
