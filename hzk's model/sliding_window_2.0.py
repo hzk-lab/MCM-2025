@@ -77,7 +77,7 @@ def train_and_eval_params(X_train, y_train, X_test, y_test, params):
 
 def main():
     # ========== 1. 读取“宽表”CSV + melt成长表 ==========
-    df_wide = pd.read_csv('C:/Users/leonhuangzekai/Desktop/MCM/MCM-2025/updated_gold_medals_int.csv')
+    df_wide = pd.read_csv('C:/Users/leonhuangzekai/Desktop/MCM/updated_total_medals_int.csv')
     df_long = df_wide.melt(
         id_vars=["Year", "Sport"],
         var_name="Country",
@@ -233,7 +233,7 @@ def main():
     results_2028["PredictedGold"] = pred_gold
 
     # 保存
-    results_2028.to_csv("final_prediction_2028_with_best_k.csv", index=False)
+    results_2028.to_csv("final_prediction_2028_with_best_k_total.csv", index=False)
     print(f"\nDone. Best k={best_k}, param={best_param}.\n2028 prediction saved to 'final_prediction_2028_with_best_k.csv'.")
 
 if __name__ == "__main__":
